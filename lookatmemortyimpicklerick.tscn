@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfvoctys6cb1i"]
+
+[ext_resource type="Script" uid="uid://crq7sqs6ccofq" path="res://scripts/pickleevil.gd" id="1_4pfgr"]
+[ext_resource type="Texture2D" uid="uid://f0nenn20e1k3" path="res://images/trulythepickleofalltime.png" id="2_4pfgr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
+size = Vector2(105.547356, 171.22095)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4pfgr"]
+size = Vector2(127.1366, 187.86745)
+
+[node name="PickleRickHD2026Revival" type="CharacterBody2D"]
+position = Vector2(262, 402)
+scale = Vector2(0.41687456, 0.42050922)
+script = ExtResource("1_4pfgr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 38.049107)
+texture = ExtResource("2_4pfgr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.196411, 42.805237)
+shape = SubResource("RectangleShape2D_hqtel")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-1.1994019, 34.481995)
+shape = SubResource("RectangleShape2D_4pfgr")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

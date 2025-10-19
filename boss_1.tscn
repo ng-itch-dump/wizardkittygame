@@ -1,0 +1,122 @@
+[gd_scene load_steps=8 format=3 uid="uid://b6y0vfq44gip1"]
+
+[ext_resource type="Texture2D" uid="uid://exr2y1tfxhpv" path="res://images/kindawesomebrick.png" id="1_y66il"]
+[ext_resource type="Script" uid="uid://dcvnqp3f5112d" path="res://scripts/player.gd" id="2_p7pij"]
+[ext_resource type="Texture2D" uid="uid://b8xyv7ewxvi8n" path="res://images/wizard kitty idle.png" id="3_mgxgb"]
+[ext_resource type="PackedScene" uid="uid://djisc7mivyka6" path="res://evil_cumber.tscn" id="3_y66il"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbghi"]
+size = Vector2(209, 193)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihfcg"]
+size = Vector2(126.5, 976.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7pij"]
+size = Vector2(52.773655, 195.00174)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="LevelStuff" type="Node" parent="."]
+
+[node name="Brick" type="StaticBody2D" parent="LevelStuff"]
+position = Vector2(106, 554)
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelStuff/Brick"]
+texture = ExtResource("1_y66il")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelStuff/Brick"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_hbghi")
+
+[node name="Brick2" type="StaticBody2D" parent="LevelStuff"]
+position = Vector2(318, 554)
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelStuff/Brick2"]
+texture = ExtResource("1_y66il")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelStuff/Brick2"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_hbghi")
+
+[node name="Brick3" type="StaticBody2D" parent="LevelStuff"]
+position = Vector2(530, 554)
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelStuff/Brick3"]
+texture = ExtResource("1_y66il")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelStuff/Brick3"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_hbghi")
+
+[node name="Brick4" type="StaticBody2D" parent="LevelStuff"]
+position = Vector2(742, 554)
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelStuff/Brick4"]
+texture = ExtResource("1_y66il")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelStuff/Brick4"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_hbghi")
+
+[node name="Brick5" type="StaticBody2D" parent="LevelStuff"]
+position = Vector2(954, 554)
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelStuff/Brick5"]
+texture = ExtResource("1_y66il")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelStuff/Brick5"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_hbghi")
+
+[node name="Brick6" type="StaticBody2D" parent="LevelStuff"]
+position = Vector2(1166, 554)
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelStuff/Brick6"]
+texture = ExtResource("1_y66il")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelStuff/Brick6"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_hbghi")
+
+[node name="Invis1" type="StaticBody2D" parent="LevelStuff"]
+position = Vector2(-85, 554)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelStuff/Invis1"]
+position = Vector2(52.75, -477.75)
+shape = SubResource("RectangleShape2D_ihfcg")
+
+[node name="Invis2" type="StaticBody2D" parent="LevelStuff"]
+position = Vector2(1274, 554)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelStuff/Invis2"]
+position = Vector2(52.75, -477.75)
+shape = SubResource("RectangleShape2D_ihfcg")
+
+[node name="Entities" type="Node" parent="."]
+
+[node name="EvilCumber" parent="Entities" instance=ExtResource("3_y66il")]
+position = Vector2(986.00006, 200.99998)
+
+[node name="Player" type="CharacterBody2D" parent="Entities"]
+position = Vector2(262, 402)
+scale = Vector2(0.41687456, 0.42050922)
+script = ExtResource("2_p7pij")
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/Player"]
+texture = ExtResource("3_mgxgb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Player"]
+position = Vector2(2.3988037, 26.158752)
+shape = SubResource("RectangleShape2D_p7pij")
+
+[node name="Camera2D" type="Camera2D" parent="Entities/Player"]
+position = Vector2(7.196392, -703.9087)
+zoom = Vector2(0.65, 0.65)
+limit_left = 1
+limit_right = 1200
+position_smoothing_enabled = true
+position_smoothing_speed = 2.5
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.15
+drag_right_margin = 0.15

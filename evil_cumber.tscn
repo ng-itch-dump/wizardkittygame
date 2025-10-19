@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://djisc7mivyka6"]
+
+[ext_resource type="Script" uid="uid://bolxhoykq4xvc" path="res://evil_cumber.gd" id="1_ypyl5"]
+[ext_resource type="Texture2D" uid="uid://cif1bc72u0ta7" path="res://images/cuCUMber.png" id="2_3ybfa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ypyl5"]
+size = Vector2(127.1366, 313.9051)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ybfa"]
+size = Vector2(137.23688, 325.7955)
+
+[node name="EvilCumber" type="CharacterBody2D"]
+position = Vector2(262, 402)
+scale = Vector2(1.2168739, 1.1005093)
+script = ExtResource("1_ypyl5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 38.049107)
+texture = ExtResource("2_3ybfa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-15.592224, 73.72015)
+shape = SubResource("RectangleShape2D_ypyl5")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-16.024658, 67.77496)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_3ybfa")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

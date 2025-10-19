@@ -1,0 +1,114 @@
+[gd_scene load_steps=8 format=3 uid="uid://xoea2mjw8ba0"]
+
+[ext_resource type="Texture2D" uid="uid://exr2y1tfxhpv" path="res://images/kindawesomebrick.png" id="1_3hls8"]
+[ext_resource type="Texture2D" uid="uid://b8xyv7ewxvi8n" path="res://images/wizard kitty idle.png" id="2_hbghi"]
+[ext_resource type="Script" uid="uid://dcvnqp3f5112d" path="res://scripts/player.gd" id="2_hn12h"]
+[ext_resource type="PackedScene" uid="uid://dfvoctys6cb1i" path="res://lookatmemortyimpicklerick.tscn" id="4_ihfcg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbghi"]
+size = Vector2(209, 193)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihfcg"]
+size = Vector2(126.5, 976.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hn12h"]
+size = Vector2(52.773655, 195.00174)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="LevelStuff" type="Node" parent="."]
+
+[node name="Brick" type="StaticBody2D" parent="LevelStuff"]
+position = Vector2(106, 554)
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelStuff/Brick"]
+texture = ExtResource("1_3hls8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelStuff/Brick"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_hbghi")
+
+[node name="Brick2" type="StaticBody2D" parent="LevelStuff"]
+position = Vector2(318, 554)
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelStuff/Brick2"]
+texture = ExtResource("1_3hls8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelStuff/Brick2"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_hbghi")
+
+[node name="Brick3" type="StaticBody2D" parent="LevelStuff"]
+position = Vector2(530, 554)
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelStuff/Brick3"]
+texture = ExtResource("1_3hls8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelStuff/Brick3"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_hbghi")
+
+[node name="Brick4" type="StaticBody2D" parent="LevelStuff"]
+position = Vector2(742, 554)
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelStuff/Brick4"]
+texture = ExtResource("1_3hls8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelStuff/Brick4"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_hbghi")
+
+[node name="Brick5" type="StaticBody2D" parent="LevelStuff"]
+position = Vector2(954, 554)
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelStuff/Brick5"]
+texture = ExtResource("1_3hls8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelStuff/Brick5"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_hbghi")
+
+[node name="Brick6" type="StaticBody2D" parent="LevelStuff"]
+position = Vector2(1166, 554)
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelStuff/Brick6"]
+texture = ExtResource("1_3hls8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelStuff/Brick6"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_hbghi")
+
+[node name="Invis1" type="StaticBody2D" parent="LevelStuff"]
+position = Vector2(-85, 554)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelStuff/Invis1"]
+position = Vector2(52.75, -477.75)
+shape = SubResource("RectangleShape2D_ihfcg")
+
+[node name="Entities" type="Node" parent="."]
+
+[node name="Player" type="CharacterBody2D" parent="Entities"]
+position = Vector2(262, 402)
+scale = Vector2(0.41687456, 0.42050922)
+script = ExtResource("2_hn12h")
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/Player"]
+texture = ExtResource("2_hbghi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Player"]
+position = Vector2(2.3988037, 26.158752)
+shape = SubResource("RectangleShape2D_hn12h")
+
+[node name="Camera2D" type="Camera2D" parent="Entities/Player"]
+position = Vector2(2.3987854, -703.90857)
+zoom = Vector2(0.65, 0.65)
+limit_left = 1
+position_smoothing_enabled = true
+position_smoothing_speed = 2.5
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.15
+drag_right_margin = 0.15
+
+[node name="PickleRickHD2026Revival" parent="Entities" instance=ExtResource("4_ihfcg")]
+position = Vector2(1130, 402)
